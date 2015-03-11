@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pessel Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pessel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pessel_forms.each do |pessel_form| %>
+      <tr>
+        <td><%= pessel_form.pessel %></td>
+        <td><%= link_to 'Show', pessel_form %></td>
+        <td><%= link_to 'Edit', edit_pessel_form_path(pessel_form) %></td>
+        <td><%= link_to 'Destroy', pessel_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pessel form', new_pessel_form_path %>

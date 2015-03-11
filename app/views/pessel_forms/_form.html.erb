@@ -1,0 +1,21 @@
+<%= form_for(@pessel_form) do |f| %>
+  <% if @pessel_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pessel_form.errors.count, "error") %> prohibited this pessel_form from being saved:</h2>
+
+      <ul>
+      <% @pessel_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pessel %><br>
+    <%= f.text_field :pessel %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
